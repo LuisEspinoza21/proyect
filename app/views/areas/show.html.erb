@@ -1,11 +1,9 @@
-
-
 <body id="body_style">
     <nav class= "nav_index">
       <img src="https://lostramites.com.co/wp-content/uploads/logo-sena-Naranja-300x300.jpg" id="Index_Logo">
         <section id="Index_Salir">
             <div id="Texto_Salir">
-                <a id="cerrar_sesion" href="#"><%= link_to "Salir", destroy_user_session_path, :method => :detele, class:"cerrar_session"%></a>
+                <a id="cerrar_sesion" href="#"><%= link_to "Salir", destroy_user_session_path, :method => :detele%></a>
             </div>
         </section>
     </nav>
@@ -18,7 +16,7 @@
             <div id="Menu_index">
                 <ul class="Home_Listas">
                     
-                    <li class="Lista1Area"><%= link_to "Nueva Area", new_area_path, :method => :get, class:"n_area" %></li>
+                    <li class="Lista1Area"><%= link_to "Nueva Area", new_area_path, :method => :get %></li>
                     <li class="Lista1"><a href="#">Editar Area</a></li>
 
 
@@ -27,21 +25,21 @@
                     
                 </ul>
             </div>
-            <div id= boton_volver> <%= link_to "Volver", home_index_path , method: :get, class:"boton_volver" %>
+            <div id= boton_volver> <%= link_to "Volver", home_index_path , method: :get %>
             </div>
             
         </section>
 
         <section id="Index_Bienvenida">
-            <table border 1px>
-                <tr>
-                    <td>codigo</td>
-                    <td>nombre</td>
-                    <td colspan="2">Opciones</td>
-                    
-                </tr>
-                <%= render @areas %>
-            </table>
+            <p>
+                <strong>Codigo:</strong>
+                <%= @area.codigo_area %>
+            </p>
+      
+            <p>
+                <strong>nombre:</strong>
+                <%=  @area.nombre_area %>
+            </p>
         </section>
         
     </main>
